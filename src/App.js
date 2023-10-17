@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Calendar from './calendar';
+import Calendar from './calendar/calendar';
 
 function App() {
   return (
