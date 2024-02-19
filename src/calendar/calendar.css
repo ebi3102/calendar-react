@@ -39,6 +39,7 @@
     flex-wrap: wrap;
     justify-content: center;
     box-sizing: border-box;
+    padding-bottom: 50px;
   }
   
   .calendar-day {
