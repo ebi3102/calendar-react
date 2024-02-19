@@ -7,10 +7,18 @@ const Calendar = () => {
     const months = ['January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'October', 'November', 'December'];
     const [currentDay, setCurrentDay] = useState(new Date());
+    const [startDay, setStartDay] = useState(false);
 
     let changeCurrentDay = (day) => {
+        console.log(day)
         setCurrentDay(new Date(day.year, day.month, day.number));
+        console.log(day)
+        // if(!startDay)
+        //     setStartDay(day.date)
+
     }
+
+
 
     return (
         <div className="calendar">
