@@ -26,9 +26,9 @@ const CalendarDays = (props) => {
                 
         <div className="table-content">
             {
-            currentDays.map((day) => {
+            currentDays.map((day, index) => {
                 return (
-                <div className={"calendar-day" + (day.currentMonth ? " current" : "") + (day.selected ? " selected" : "")}
+                <div key={index} className={"calendar-day" + (day.currentMonth ? " current" : "") + (day.selected ? " selected" : "")}
                         onClick={() => props.changeCurrentDay(day)}>
                     <p>{day.number}</p>
                 </div>

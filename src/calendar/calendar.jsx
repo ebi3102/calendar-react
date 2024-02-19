@@ -21,7 +21,7 @@ const Calendar = () => {
                 <div className="table-header">
                     {
                         weekdays.map((weekday) => {
-                            return <div className="weekday"><p>{weekday}</p></div>
+                            return <div key={weekday} className="weekday"><p>{weekday}</p></div>
                         })
                     }
                 </div>
