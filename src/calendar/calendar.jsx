@@ -8,22 +8,29 @@ const Calendar = () => {
         'July', 'August', 'September', 'October', 'November', 'December'];
     const [currentDay, setCurrentDay] = useState(new Date());
     const [startDay, setStartDay] = useState(false);
+    const [endDay, setEndDay] = useState(false);
 
     let changeCurrentDay = (day) => {
-        console.log(day)
+        if(endDay)
+            return
         setCurrentDay(new Date(day.year, day.month, day.number));
-        console.log(day)
-        // if(!startDay)
-        //     setStartDay(day.date)
-
+        if(!startDay){
+            setStartDay(new Date(day.year, day.month, day.number));
+        }else if(!endDay){
+            setEndDay(new Date(day.year, day.month, day.number));
+        }
     }
 
+    let startDate = (startDay)? `${startDay.getDate()} ${months[startDay.getMonth()]} ${startDay.getFullYear()}`: ''
+    let endDate = (endDay)? `${endDay.getDate()} ${months[endDay.getMonth()]} ${endDay.getFullYear()}`:''
 
 
     return (
         <div className="calendar">
             <div className="calendar-head">
                 <h2>{months[currentDay.getMonth()]} {currentDay.getFullYear()}</h2>
+                <h5>{startDate}</h5>
+                <h5>{endDate}</h5>
             </div>
             <div className="calendar-body">
                 <div className="table-header">
